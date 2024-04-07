@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Tariff Calculator</title>
+
+    <script src="waterTariffs.js"></script>
+</head>
+<body>
+    <h1>Water Bill Calculator</h1>
+
+    <form id="waterForm">
+        <label for="waterVol">Enter the volume of water used: </label><br>
+        <input type="text" id="waterVol" name="waterVol"><br>
+
+        <input type="submit" value="Calculate">          
+    </form>
+
+    <section>
+        <div> Water Bill in R is: </div>
+        <div id="result"> </div> <!-- Element to display the result -->
+
+    </section>
+
+    
+
+    <script>
+        document.getElementById('waterForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            waterTariff(); // Call the waterTariff function
+        });
+
+        function displayResult(result) {
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</body>
+</html>
